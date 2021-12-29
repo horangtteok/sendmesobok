@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'MaplestoryOTFLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.app {
+    font-family: 'MaplestoryOTFLight';
+    background-color: #e2e2e2;
+}
+
+#title {
+    position: absolute;
+    top: 4rem;
+    left: 20px;
+    font-weight: bold;
+}
+
+.post_number {
+    position: absolute;
+    top: 6rem;
+    left: 22px;
+    letter-spacing: 1px;
+
+}
+.post_number span{
+    color: #a183e2;
+    font-family: 'MaplestoryOTFBold';
+    font-size: 18px;
+}
+
+/* PostBox */
+.postBox .post {
+    text-align: center;
+    transition: transform 0.4s;
+    margin: 2rem;
+
+    cursor: pointer;
+}
+.postBox .post img{
+    width: 64px;
+    filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+
+}
+.postBox .post span {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+.postBox .post:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,13 @@
+.app {
+    text-align: center;
+}
+
+.label {
+    font-weight: 600;
+}
+
+.label,
+.gotoRegister {
+    /* display: flex; */
+    margin-top: 0.4rem;
+}

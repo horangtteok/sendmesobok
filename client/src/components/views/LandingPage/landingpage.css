@@ -1,0 +1,35 @@
+
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.btn_start {
+    /* background-color: #6768ab;
+    border-color: #6768ab; */
+    background-color: #1890ff;
+    border-color: #1890ff;
+    border-radius: 2px;
+    color: #fff;
+    line-height: 1.5;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    font-size: 20px;
+    font-family: 'CookieRun-Regular';
+
+    padding: 4px 15px;
+
+    position: absolute;
+    bottom: 26%;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    cursor: pointer;
+}
+.btn_start:hover {
+    background-color: #6768abda;
+    color: #fff;
+    border-radius: 0.2em;
+    padding: 5px 15px;
+}

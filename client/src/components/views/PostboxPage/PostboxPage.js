@@ -1,10 +1,12 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 import { POST_SERVER, USER_SERVER } from '../../Config';
-import { Button, notification, Empty, Popover } from 'antd';
-import './postboxpage.css';
+import { Button, notification, Empty, Row } from 'antd';
+import GridCards from '../commons/GridCards';
+import './Sections/postboxpage.css';
 
 function PostboxPage() {
     const user = useSelector(state => state.user);
@@ -13,6 +15,8 @@ function PostboxPage() {
     const [Username, setUsername] = useState("")
 
     const [Posts, setPosts] = useState([])
+
+    const [Open, setOpen] = useState(false)
     
     useEffect(() => {
         fetchPosts();
@@ -87,65 +91,108 @@ function PostboxPage() {
     //     });
     //   }
 
+    const PostboxOpener = () => {
+        setOpen(true);
+    }
 
-    const renderPosts = Posts.map((post, index) => {
-        const content = (
-            <div style={{ maxWidth: '200px' }}>
-                <p>{post.message}</p>
-            </div>
-        )
-
-        return (
-            <div className='post' key={index}>
-            {user.userData && user.userData.isAuth ?
-                <Popover content={content} title={post.name} trigger="click">
-                    <img className='post__img' src={`${process.env.PUBLIC_URL}/img/posts/post${post.deco}.png`} alt={post.name} />
-                    <br />
-                    <span>{post.name}</span>
-                </Popover>
-            :
-                <>
-                    <img className='post__img' src={`${process.env.PUBLIC_URL}/img/posts/post${post.deco}.png`} alt={post.name} />
-                    <br />
-                    <span>{post.name}</span>
-                </>
-            }
-                
-            </div>
-        )
-    })
+    const PostboxCloser = () => {
+        setOpen(false);
+    }
 
     return (
-        <div className="app" style={{ display: 'flex', flexDirection:'column',
-                        justifyContent: 'center', alignItems: 'center',
-                        width: '100%', height: '100vh'
-        }}>
-            {Username &&
-            <>
-                <h2 id='title'>{Username} 님의 우체통</h2>
-                <div className='post_number'>
-                    <h3><span>{Posts.length}</span>개의 엽서가 도착했습니다.</h3>
-                </div>
+      <div
+        className={`app ${!Open ? "post__app" : "post_app_none"}`}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100vh",
+        }}
+      >
+        {Username && (
+          <>
+            <h2 id="title">{Username} 님의 복주머니</h2>
+            <div className="post_number">
+              <h3>
+                <span>{Posts.length}</span>개의 복이 도착했습니다.
+              </h3>
+            </div>
 
-                {(Posts.length < 1) ?
-                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-                :<div className='postBox'>
-                    {renderPosts}
-                </div>
-                }
-            </>
-            }
+            <img
+              id={Open ? "widepocket" : "pocket"}
+              alt="복주머니"
+              onClick={PostboxOpener}
+            />
 
-            {user.userData && user.userData.isAuth ? 
-            <>
-                <Button type='primary' onClick={copyUrl} size='small'>URL 복사하기</Button>
-                <Button type='primary' size='small'>카카오톡 공유하기</Button>
-            </>
-            : <Button type='primary' size='small' href={`/write/${userId}`}>엽서 보내기</Button>
-            }
-            
-        </div>
-    )
+            {Posts.length < 1 ? (
+              <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+            ) : (
+              <div className='postBox'>
+                {/* 엽서를 grid로 rendering하는 부분 */}
+                {Open && (
+                  <>
+                    <Button
+                      className="btnClose"
+                      type="default"
+                      style={{ background: "none", border: "none" }}
+                      onClick={PostboxCloser}
+                    >
+                      <img
+                        src="https://user-images.githubusercontent.com/43427380/147858020-e0a6fcb7-389a-458f-9f5c-00a9752ce9d9.png"
+                        alt="close pocket"
+                      />
+                    </Button>
+
+                    <Row className="postBox__table" gutter={[3, Posts.length / 3]}>
+                      {Posts &&
+                        Posts.map((post, index) => (
+                          <React.Fragment key={index}>
+                            {user.userData && user.userData.isAuth ? (
+                              <GridCards
+                                userAuth
+                                image={`${process.env.PUBLIC_URL}/img/posts/post${post.deco}.png`}
+                                name={post.name}
+                                message={post.message}
+                              />
+                            ) : (
+                              <GridCards
+                                image={`${process.env.PUBLIC_URL}/img/posts/post${post.deco}.png`}
+                                name={post.name}
+                              />
+                            )}
+                          </React.Fragment>
+                        ))}
+                    </Row>
+                  </>
+                )}
+              </div>
+            )}
+          </>
+        )}
+
+        {user.userData && user.userData.isAuth ? (
+          <>
+            <Button type="primary" onClick={copyUrl} size="small">
+              URL 복사하기
+            </Button>
+            <Button type="primary" size="small">
+              카카오톡 공유하기
+            </Button>
+          </>
+        ) : (
+          <Button
+            className="btnSend"
+            type="primary"
+            size="small"
+            href={`/write/${userId}`}
+          >
+            엽서 보내기
+          </Button>
+        )}
+      </div>
+    );
 }
 
 export default PostboxPage

@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
@@ -19,13 +21,15 @@ app.use(bodyParser.json());
 // cookie-parser option
 app.use(cookieParser());
 
+app.use(cors());
+
 app.use('/api/users', require('./routes/users'));
 app.use('/api/posts', require('./routes/posts'));
 
 app.get('/', (req, res) => res.send('<h1>Hello World! 반갑습니다!</h1>'));
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}!`)

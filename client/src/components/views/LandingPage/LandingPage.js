@@ -10,12 +10,12 @@ function LandingPage( props ) {
             <div className="app" style={{ display: 'flex', justifyContent: 'center',
                                         flexDirection: 'column', alignItems: 'center',
                                         width: '100%', height: '100vh',
-                                        backgroundImage: "url('img/new-year-card.png')",
+                                        // backgroundImage: "url('img/background.gif')",
+                                        backgroundImage: "url('img/back-repeat.gif')",
                                         backgroundPosition: 'center',
                                         // backgroundSize: 'cover',
                                         backgroundRepeat: 'no-repeat',
-                                        // backgroundSize: 'contain',
-                                        backgroundSize: '120px'
+                                        backgroundSize: 'contain',
             }}>                
                 {user.userData && user.userData.isAuth  ?
                     <Button type="primary" size="default" href={`/post/${user.userData._id}`}>엽서함으로 이동</Button>

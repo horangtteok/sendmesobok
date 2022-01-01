@@ -38,7 +38,6 @@ function Message( props ) {
             message: Message,
             deco: deco,
         }
-        console.log(body);
         
         Axios.post(`${POST_SERVER}/send`, body)
             .then(res => {

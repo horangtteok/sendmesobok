@@ -15,10 +15,10 @@
 
 .menu {
   padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  background-color: transparent;
+  /* box-shadow: 0 0 30px #f3f1f1; */
+  /* border-bottom: solid 1px #e8e8e8; */
 
   font-family: 'MaplestoryOTFLight';
 }
@@ -32,7 +32,7 @@
   display: inline-block;
   font-size: 20px;
   padding: 7px 20px 10px 20px;
-  color: #A183E2;
+  color: #4B92FD;
 }
 
 .menu__container .ant-menu-item {
@@ -66,14 +66,14 @@
   padding: 6px;
   margin-top: 8px;
   display: none !important; /* use of important to overwrite ant-btn */
-  /* background: #3e91f7; */
 }
 
 .menu_drawer {
   font-family: 'MaplestoryOTFLight';
 }
 .ant-menu {
-  /* background-color: #3e91f7; */
+  background: none;
+  font-family: 'MaplestoryOTFLight';
 }
 .menu_drawer .ant-drawer-body {
   padding: 0 !important;

@@ -15,6 +15,7 @@ function RightMenu(props) {
     dispatch(logoutUser())
         .then(response => {
             if(response.payload.success) {
+                localStorage.removeItem('x_auth');
                 navigate('/login');
             } else {
                 alert(response.payload.err);

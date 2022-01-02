@@ -34,6 +34,10 @@ export function auth() {
 
     const request = Axios.get(`${USER_SERVER}/auth`)
     .then(response => response.data);
+    
+    console.log(response);
+    console.log(response.data);
+    console.log(response.data.isAuth);
 
     return {
         type: AUTH_USER,

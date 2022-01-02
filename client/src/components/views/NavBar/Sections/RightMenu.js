@@ -23,7 +23,7 @@ function RightMenu(props) {
                 localStorage.removeItem('x_auth');
                 navigate('/login');
             } else {
-                alert('Log Out Failed...');
+                alert(response.payload.err);
             }
         });
   };

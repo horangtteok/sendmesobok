@@ -15,7 +15,7 @@ function RightMenu(props) {
     let body = {
         x_auth: localStorage.getItem('x_auth'),
     }
-    
+
     dispatch(logoutUser(body))
         .then(response => {
             if(response.payload.success) {

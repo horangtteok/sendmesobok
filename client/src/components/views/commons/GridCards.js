@@ -1,7 +1,15 @@
-import { Col, Popover } from "antd";
+import { useState } from 'react';
+import { Col } from "antd";
+import Modal from './Modal.js';
 import '../PostboxPage/Sections/postboxpage.css';
 
 function GridCards(props) {
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const modalClose = () => {
+        setModalOpen(!modalOpen)
+    }
+
     const onNotuserHandler = () => {
         alert("복주머니 주인만 읽을 수 있어요!")
     }
@@ -20,21 +28,24 @@ function GridCards(props) {
             </Col>
         )
     } else {
-        const content = (
-            <div style={{ maxWidth: '200px' }}>
-                <p>{props.message}</p>
-            </div>
-        )
-
         return (
+            <>
             <Col lg={6} md={8} xs={8}>
-                <div className='post'>
-                    <Popover content={content} title={props.name} trigger="click">
+                <button
+                    onClick={modalClose} 
+                    style={{ background: "none", border: "none", width:"70px" }}
+                >
+                    <div className='post'>
                         <p>{props.name}</p>
                         <img className='post__img' src={props.image} alt={props.name} />
-                    </Popover>
-                </div>
+                    </div>
+                </button>
             </Col>
+
+            { modalOpen && 
+                <Modal modalClose={modalClose} title={props.name} message={props.message} deco={props.image} />
+            }
+            </>
         );
     }
 

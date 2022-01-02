@@ -31,6 +31,7 @@ export function registerUser(dataTosubmit) {
 }
 
 export function auth(userToken) {
+
     const request = Axios.post(`${USER_SERVER}/auth`, userToken)
     .then(response => response.data);
 
@@ -41,6 +42,7 @@ export function auth(userToken) {
 }
 
 export function logoutUser(userToken){
+    
     const request = Axios.post(`${USER_SERVER}/logout`, userToken)
     .then(response => response.data);
 

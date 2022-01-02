@@ -8,7 +8,7 @@ const { auth } = require('../middleware/auth');
 //             User
 //=================================
 
-router.get('/auth', auth, (req, res) => {
+router.post('/auth', auth, (req, res) => {
     // 여기까지 미들웨어를 통과해왔다는 얘기는 Authentication이 True라는 말!
     // 이를 클라이언트에 정보(user 정보)를 전달해줘야 한다.
     // auth.js에서 req에 user를 넣었기에 req.~~로 접근 가능
@@ -72,18 +72,15 @@ router.post('/login', (req, res) => {
             user.generateToken((err, user) => {
                 if(err) return res.status(400).send(err);
 
-                // 토큰을 저장한다. 어디에? 쿠키, 로컬스토리지 등 여러가지 방법이 있다.
-                // 일단 쿠키에 저장해보자.
-                res.cookie("x_auth", user.token)    
-                    .status(200)
-                    .json({ loginSuccess: true, userId: user._id }); 
+                res.status(200)
+                    .json({ loginSuccess: true, userId: user._id, token: user.token }); 
             });
 
         })
     })
 });
 
-router.get('/logout', auth, (req, res) => { // login된 상태이므로 auth middleware를 넣어준다.
+router.post('/logout', auth, (req, res) => { // login된 상태이므로 auth middleware를 넣어준다.
     User.findOneAndUpdate({ _id: req.user._id }, // auth에서 req에 넣어준 user 정보 이용
         { token: "" }  // token 삭제
         , (err, user) => {

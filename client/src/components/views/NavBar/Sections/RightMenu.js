@@ -19,6 +19,7 @@ function RightMenu(props) {
     dispatch(logoutUser(body))
         .then(response => {
             if(response.payload.success) {
+                localStorage.removeItem('userId');
                 localStorage.removeItem('x_auth');
                 navigate('/login');
             } else {

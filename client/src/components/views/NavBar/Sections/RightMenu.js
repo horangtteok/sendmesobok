@@ -17,7 +17,7 @@ function RightMenu(props) {
             if(response.payload.success) {
                 navigate('/login');
             } else {
-                alert('Log Out Failed...');
+                alert(response.payload.err);
             }
         });
   };

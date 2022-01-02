@@ -35,7 +35,6 @@ function LoinPage( props ) {
             if(response.payload.loginSuccess) {
                 localStorage.setItem("userId", response.payload.userId);
                 localStorage.setItem("x_auth", response.payload.token);
-                cookies.set('x_auth', response.data.token);
                 navigate('/');
             } else {
                 alert(response.payload.message);

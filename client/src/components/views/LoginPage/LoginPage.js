@@ -33,7 +33,9 @@ function LoinPage( props ) {
         dispatch(loginUser(body))
         .then(response => {
             if(response.payload.loginSuccess) {
-                window.localStorage.setItem("userId", response.payload.userId);
+                localStorage.setItem("userId", response.payload.userId);
+                localStorage.setItem("x_auth", response.payload.token);
+                cookieParser.set('x_auth', response.data.token);
                 navigate('/');
             } else {
                 alert(response.payload.message);

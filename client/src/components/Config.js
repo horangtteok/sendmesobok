@@ -1,3 +1,3 @@
 //SERVER ROUTES
-export const USER_SERVER = '/api/users';
-export const POST_SERVER = '/api/posts';
+export const USER_SERVER = 'https://sendmesobok.herokuapp.com/api/users';
+export const POST_SERVER = 'https://sendmesobok.herokuapp.com/api/posts';

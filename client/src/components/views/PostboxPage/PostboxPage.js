@@ -133,7 +133,7 @@ function PostboxPage() {
                 {/* 엽서를 grid로 rendering하는 부분 */}
                 {Open && (
                   <>
-                    <Button
+                    {/* <Button
                       className="btnClose"
                       type="default"
                       style={{ background: "none", border: "none" }}
@@ -143,7 +143,7 @@ function PostboxPage() {
                         src="https://user-images.githubusercontent.com/43427380/147858020-e0a6fcb7-389a-458f-9f5c-00a9752ce9d9.png"
                         alt="close pocket"
                       />
-                    </Button>
+                    </Button> */}
 
                     <Row className="postBox__table" gutter={[3, Posts.length / 3]}>
                       {Posts &&

@@ -11,7 +11,7 @@ import PostboxPage from './views/PostboxPage/PostboxPage';
 import WritePage from "./views/WritePage/WritePage";
 import NavBar from "./views/NavBar/NavBar";
 import Auth from '../hoc/auth';
-import Footer from "./views/Footer/Footer";
+// import Footer from "./views/Footer/Footer";
 import './App.css';
 
 

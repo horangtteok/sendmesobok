@@ -18,7 +18,7 @@ function LandingPage( props ) {
                                         backgroundSize: 'contain',
             }}>                
                 {user.userData && user.userData.isAuth  ?
-                    <Button type="primary" size="default" href={`/post/${user.userData._id}`}>엽서함으로 이동</Button>
+                    <Button type="primary" size="default" href={`/post/${user.userData._id}`}>복주머니로 이동</Button>
                     : 
                     <a href="/login" className="btn_start">
                         <span>시작하기</span>

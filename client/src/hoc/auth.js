@@ -18,7 +18,7 @@ export default function(SpecificComponent, option, adminRoute = null) {
         let navigate = useNavigate();
 
         useEffect(() => {
-            dispatch(auth())
+            dispatch(auth(localStorage.getItem('x_auth')))
             .then(response => {
                 // 로그인하지 않은 상태
                 if(!response.payload.isAuth) {

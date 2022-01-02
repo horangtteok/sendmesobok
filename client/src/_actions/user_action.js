@@ -30,9 +30,8 @@ export function registerUser(dataTosubmit) {
     }
 }
 
-export function auth() {
-
-    const request = Axios.get(`${USER_SERVER}/auth`)
+export function auth(userToken) {
+    const request = Axios.post(`${USER_SERVER}/auth`, userToken)
     .then(response => response.data);
 
     return {

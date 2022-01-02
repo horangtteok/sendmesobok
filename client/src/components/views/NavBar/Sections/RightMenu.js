@@ -12,7 +12,11 @@ function RightMenu(props) {
   const user = useSelector(state => state.user);
 
   const logoutHandler = () => {
-    dispatch(logoutUser())
+    let body = {
+        x_auth: localStorage.getItem('x_auth'),
+    }
+    
+    dispatch(logoutUser(body))
         .then(response => {
             if(response.payload.success) {
                 localStorage.removeItem('x_auth');

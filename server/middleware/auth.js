@@ -4,7 +4,7 @@ let auth = (req, res, next) => {
     // 인증 처리를 하는 곳
 
     // 클라이언트 cookie에서 토큰 가져오기: cookie-parser 이용
-    let token = req.cookies.x_auth; // x_auth 이름의 cookie를 가져옴
+    let token = req.body.x_auth; // x_auth 이름의 cookie를 가져옴
 
     console.log("prev auth");
     // 토큰을 복호화 -> user 찾기

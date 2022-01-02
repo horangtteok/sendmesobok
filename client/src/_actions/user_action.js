@@ -30,9 +30,9 @@ export function registerUser(dataTosubmit) {
     }
 }
 
-export function auth() {
+export function auth(userToken) {
 
-    const request = Axios.get(`${USER_SERVER}/auth`)
+    const request = Axios.post(`${USER_SERVER}/auth`, userToken)
     .then(response => response.data);
 
     return {
@@ -41,8 +41,9 @@ export function auth() {
     }
 }
 
-export function logoutUser(){
-    const request = Axios.get(`${USER_SERVER}/logout`)
+export function logoutUser(userToken){
+    
+    const request = Axios.post(`${USER_SERVER}/logout`, userToken)
     .then(response => response.data);
 
     return {

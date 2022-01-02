@@ -40,8 +40,8 @@ export function auth(userToken) {
     }
 }
 
-export function logoutUser(){
-    const request = Axios.get(`${USER_SERVER}/logout`)
+export function logoutUser(userToken){
+    const request = Axios.post(`${USER_SERVER}/logout`, userToken)
     .then(response => response.data);
 
     return {

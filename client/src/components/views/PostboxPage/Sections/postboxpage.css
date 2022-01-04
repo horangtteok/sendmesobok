@@ -12,22 +12,17 @@
 }
 
 #title {
-    position: fixed;
-    top: 4rem;
-    left: 20px;
+    position: absolute;
+    top: 3.2rem;
     font-weight: bold;
 }
 
 .post_number {
-    /* position: absolute; */
-    position: fixed;
-
-    top: 6rem;
-    left: 22px;
+    position: absolute;
+    top: 5.2rem;
     letter-spacing: 1px;
 
     z-index: 1;
-
 }
 .post_number span{
     color: #a183e2;
@@ -37,12 +32,10 @@
 
 /* PostBox */
 .postBox__table {
-    /* z-index: 1; */
     margin-top: 6em;
     max-width: 310px;
 
 }
-
 .postBox__table .post {
     text-align: center;
     transition: transform 0.4s;

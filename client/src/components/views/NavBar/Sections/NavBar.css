@@ -17,9 +17,7 @@
   padding: 0 20px;
   overflow: auto;
   background-color: transparent;
-  /* box-shadow: 0 0 30px #f3f1f1; */
-  /* border-bottom: solid 1px #e8e8e8; */
-
+  max-width: 400px;
   font-family: 'MaplestoryOTFLight';
 }
 

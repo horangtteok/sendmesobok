@@ -12,22 +12,17 @@
 }
 
 #title {
-    position: fixed;
-    top: 4rem;
-    left: 20px;
+    position: absolute;
+    top: 3rem;
     font-weight: bold;
 }
 
 .post_number {
-    /* position: absolute; */
-    position: fixed;
-
-    top: 6rem;
-    left: 22px;
+    position: absolute;
+    top: 5rem;
     letter-spacing: 1px;
 
     z-index: 1;
-
 }
 .post_number span{
     color: #a183e2;
@@ -36,16 +31,27 @@
 }
 
 /* PostBox */
-.postBox__table {
-    /* z-index: 1; */
-    margin-top: 6em;
-}
+.postBox {
+    position: absolute;
+    top: 18em;
 
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 52%;
+    max-height: 400px;
+}
+.postBox::-webkit-scrollbar {
+    width: 10px;
+    /* border-radius: 90px; */
+}
+.postBox__table {
+    max-width: 310px;
+}
 .postBox__table .post {
     text-align: center;
     transition: transform 0.4s;
     cursor: pointer;
-    padding: 0;
+    padding: 10px 0;
 }
 .postBox__table .post img{
     width: 64px;
@@ -65,11 +71,15 @@
     background-color: #ffe196b0;
     background-image: url('../../../../assets/backpocket.png');
     background-repeat: repeat-y;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 .post_app_none {
-    background-color: #ffe196b0;
+    background-color: #ffffff;
+    background-image: url('../../../../assets/widepocket.png');
+    background-size: cover;
+    background-position: center;
+
 }
 #pocket {
     position: fixed;
@@ -81,19 +91,18 @@
     content:url("../../../../assets/pocket.png");
 }
 #widepocket {
-    content:url("../../../../assets/widepocket.png");
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 320px;
+    display: none;
 }
 
 
-.btnSend {
-    position: relative;
-}
-.btnClose {
+#btnSend {
     position: fixed;
-    bottom: 40px;
-    margin: auto;
+    bottom: 1.4em;
+
+    width: 84%;
+    max-width: 400px;
+    padding: 2rem 0;
+    font-size: 18px;
+    line-height: 1.8;
+    border-radius: 6px;
 }

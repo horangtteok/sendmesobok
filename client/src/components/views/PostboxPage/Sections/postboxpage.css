@@ -31,10 +31,21 @@
 }
 
 /* PostBox */
-.postBox__table {
-    margin-top: 6em;
-    max-width: 310px;
+.postBox {
+    position: absolute;
+    top: 18em;
 
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 52%;
+    max-height: 400px;
+}
+.postBox::-webkit-scrollbar {
+    width: 10px;
+    /* border-radius: 90px; */
+}
+.postBox__table {
+    max-width: 310px;
 }
 .postBox__table .post {
     text-align: center;
@@ -65,7 +76,7 @@
 }
 .post_app_none {
     background-color: #ffffff;
-    background-image: url('../../../../assets/widepocket2.png');
+    background-image: url('../../../../assets/widepocket.png');
     background-size: cover;
     background-position: center;
 
@@ -84,11 +95,14 @@
 }
 
 
-.btnSend {
-    position: relative;
-}
-.btnClose {
+#btnSend {
     position: fixed;
-    bottom: 40px;
-    margin: auto;
+    bottom: 1.4em;
+
+    width: 84%;
+    max-width: 400px;
+    padding: 2rem 0;
+    font-size: 18px;
+    line-height: 1.8;
+    border-radius: 6px;
 }

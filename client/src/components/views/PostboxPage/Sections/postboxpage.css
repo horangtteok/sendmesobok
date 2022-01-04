@@ -39,14 +39,15 @@
 .postBox__table {
     /* z-index: 1; */
     margin-top: 6em;
-    max-width: 260px;
+    max-width: 300px;
+
 }
 
 .postBox__table .post {
     text-align: center;
     transition: transform 0.4s;
     cursor: pointer;
-    padding: 0;
+    padding: 10px 0;
 }
 .postBox__table .post img{
     width: 64px;
@@ -87,11 +88,6 @@
 }
 #widepocket {
     display: none;
-    /* content:url("../../../../assets/widepocket.png");
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 320px; */
 }
 
 

@@ -1,4 +1,12 @@
+#root {
+    align-items: center;
+}
+.App {
+    max-width: 400px;
+    margin: 0 auto;
+}
 .app {
     font-family: 'MaplestoryOTFLight';
     text-align: center;
+    width: 100%;
 }

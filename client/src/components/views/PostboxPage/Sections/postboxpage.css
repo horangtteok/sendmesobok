@@ -65,11 +65,15 @@
     background-color: #ffe196b0;
     background-image: url('../../../../assets/backpocket.png');
     background-repeat: repeat-y;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 .post_app_none {
-    background-color: #ffe196b0;
+    background-color: #ffffff;
+    background-image: url('../../../../assets/widepocket2.png');
+    background-size: cover;
+    background-position: center;
+
 }
 #pocket {
     position: fixed;
@@ -81,11 +85,12 @@
     content:url("../../../../assets/pocket.png");
 }
 #widepocket {
-    content:url("../../../../assets/widepocket.png");
+    display: none;
+    /* content:url("../../../../assets/widepocket.png");
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 320px;
+    max-width: 320px; */
 }
 
 

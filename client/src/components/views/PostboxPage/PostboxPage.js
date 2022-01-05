@@ -157,14 +157,23 @@ function PostboxPage() {
       )}
 
       {user.userData && user.userData.isAuth ? (
-        <>
-          <Button type="primary" onClick={copyUrl} size="small">
+        <div
+          className="share-div"
+          style={{
+            position: "fixed",
+            bottom: "1.4em",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <Button id="copy-btn" type="primary" onClick={copyUrl} size="small">
             URL 복사하기
           </Button>
-          <Button type="primary" size="small">
+          <Button id="share-btn" type="primary" size="small">
             카카오톡 공유하기
           </Button>
-        </>
+        </div>
       ) : (
         <Button
           id="btnSend"
@@ -172,7 +181,7 @@ function PostboxPage() {
           size="small"
           href={`/write/${userId}`}
         >
-          엽서 보내기
+          새해 복 많이 받으세요.
         </Button>
       )}
     </div>

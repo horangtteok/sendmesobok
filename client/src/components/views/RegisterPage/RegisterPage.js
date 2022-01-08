@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../../_actions/user_action';
 import { Button, Input } from 'antd';
+import './registerpage.css';
 
 function RegisterPage( props ) {
     const dispatch = useDispatch();
@@ -56,12 +57,12 @@ function RegisterPage( props ) {
         });
     }
 
-
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                        width: '100%', height: '100vh'
+        <div className="app" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
+                        width: '100%', height: '100vh', flexDirection: 'column',
         }}>
-            <form style={{ display: 'flex', flexDirection: 'column' }}
+            <h2 className='sign-title'>회원 가입</h2>
+            <form id='register-form' style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}
                 onSubmit={onSubmitHandler}
             >
                 <label>닉네임</label>
@@ -92,12 +93,12 @@ function RegisterPage( props ) {
                 />
 
                 {Confirm ?
-                    (<span></span>) : (<span style={{ color: 'red' }}>일치하지 않습니다!</span>)
+                    (<span className='confirm-text'></span>) : (<span className='confirm-text'>비밀번호가 일치하지 않습니다!</span>)
                 }
 
                 <br />
                 <Button type="primary" htmlType="submit" className="register-form-button" style={{ minWidth: '100%' }}>
-                    Register
+                    회원가입
                 </Button>
             </form>
         </div>

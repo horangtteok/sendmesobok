@@ -45,9 +45,10 @@ function LoinPage( props ) {
     return (
         <div className="app">
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                        width: '100%', height: '100vh'
+                        width: '100%', height: '100vh', flexDirection: 'column',
             }}>
-                <form style={{ display: 'flex', flexDirection: 'column' }}
+                <h2 className='sign-title'>로그인</h2>
+                <form id='login-form' style={{ display: 'flex', flexDirection: 'column', textAlign:'left' }}
                     onSubmit={onSubmitHandler}
                 >
                     <label className="label">닉네임</label>
@@ -72,7 +73,7 @@ function LoinPage( props ) {
                         로그인
                     </Button>
 
-                    <a className="gotoRegister" href="/register">지금 회원가입하세요!</a>
+                    <a className="gotoRegister" href="/register">회원가입으로 슝!</a>
                 </form>
             </div>
         </div>

@@ -7,7 +7,6 @@ const Explain = ( props ) => {
     const { username } = props;
 
     useEffect(() => {
-        alert(process.env.REACT_APP_KAKAO_KEY);
         Kakao.init(process.env.REACT_APP_KAKAO_KEY);
     }, []);
 

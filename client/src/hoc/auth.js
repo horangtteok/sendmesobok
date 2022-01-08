@@ -14,7 +14,6 @@ export default function(SpecificComponent, option, adminRoute = null) {
 
     function AuthenticationCheck(props) {
         const dispatch = useDispatch();
-
         let navigate = useNavigate();
 
         useEffect(() => {

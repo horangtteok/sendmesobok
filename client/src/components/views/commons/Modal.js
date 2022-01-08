@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+// import { Button } from 'antd';
 import "./Modal.css";
 
 const Modal = ( props ) => {
@@ -10,9 +10,9 @@ const Modal = ( props ) => {
         }
     };
 
-    const deleteMessage = () => {
-        alert("삭제합니다.");
-    }
+    // const deleteMessage = () => {
+    //     alert("삭제합니다.");
+    // }
 
     return (
       <div

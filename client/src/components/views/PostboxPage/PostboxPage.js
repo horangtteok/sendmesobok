@@ -11,14 +11,11 @@ import ShareKakao from "../commons/ShareKakao";
 
 function PostboxPage() {
   const user = useSelector((state) => state.user);
-
   let { userId } = useParams(); // get userId from URL;
   const [Username, setUsername] = useState("");
-
   const [Posts, setPosts] = useState([]);
-
   const [Open, setOpen] = useState(false);
-
+  
   useEffect(() => {
     fetchPosts();
     getUsername();
@@ -33,7 +30,7 @@ function PostboxPage() {
       }
     });
   };
-
+  
   const fetchPosts = () => {
     // userId: 받는 사람 userId
     // userId: localStorage.getItem('userId')

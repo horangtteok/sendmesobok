@@ -26,14 +26,13 @@ function Message( props ) {
     ]
 
     const [Word, setWord] = useState(0)
+    const [Name, setName] = useState("")
+    const [Message, setMessage] = useState("")
+    
     useEffect(() => {
         setWord(Math.floor(Math.random() * words.length));
     }, [])
 
-
-    const [Name, setName] = useState("")
-    const [Message, setMessage] = useState("")
-    
     const onNameHandler = (event) => {
         setName(event.currentTarget.value);
     }

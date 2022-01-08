@@ -1,11 +1,3 @@
-
-@font-face {
-    font-family: 'CookieRun-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .btn_start {
     background-color: rgb(13, 138, 255);
     border-color: #1890ff;

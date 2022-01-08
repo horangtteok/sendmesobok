@@ -7,7 +7,7 @@ import { POST_SERVER, USER_SERVER } from "../../Config";
 import { Button, notification, Empty, Row } from "antd";
 import GridCards from "../commons/GridCards";
 import "./Sections/postboxpage.css";
-import Explain from "../commons/Explain";
+import ShareKakao from "../commons/ShareKakao";
 
 function PostboxPage() {
   const user = useSelector((state) => state.user);
@@ -29,7 +29,7 @@ function PostboxPage() {
       if (res.data.success) {
         setUsername(res.data.name);
       } else {
-        alert("user 정보를 불러올 수 없습니다. 관리자에 문의해주세요.");
+        alert("사용자 정보를 불러올 수 없습니다. 관리자에 문의해주세요.");
       }
     });
   };
@@ -43,7 +43,7 @@ function PostboxPage() {
       if (res.data.success) {
         setPosts(res.data.posts);
       } else {
-        alert("엽서를 불러오는 데 실패했습니다.");
+        alert("복을 불러오는 데 실패했습니다.");
       }
     });
   };
@@ -60,7 +60,7 @@ function PostboxPage() {
     document.body.removeChild(tmp);
 
     notification["info"]({
-      message: "URL을 복사했습니다.",
+      message: "URL을 클립보드에 복사했습니다.",
     });
   };
 
@@ -78,15 +78,20 @@ function PostboxPage() {
         alignItems: "center",
         width: "100%",
         height: "100vh",
+        textAlign: 'left',
       }}
     >
       {Username && (
         <>
-          <h2 id="title">{Username} 님의 복주머니</h2>
           <div className="post_number">
-            <h3>
-              <span>{Posts.length}</span>개의 복이 도착했습니다.
-            </h3>
+            <h2 id="title">{Username} 님의 복주머니에</h2>
+            <h2>
+              <span>{Posts.length}</span>개의 복이 쌓였어요.
+            </h2>
+            <p>
+              <img src="https://user-images.githubusercontent.com/43427380/148654883-200da744-a832-4c56-a4fb-ed6efc3baf60.png" alt="message" /> 
+              받은 연하장은 <span>설날</span>에 확인할 수 있어요
+            </p>
           </div>
 
           <img
@@ -141,7 +146,7 @@ function PostboxPage() {
           <Button id="copy-btn" type="primary" onClick={copyUrl} size="small">
             URL 복사하기
           </Button>
-          <Explain 
+          <ShareKakao 
             username={Username}
           />
         </div>
@@ -152,7 +157,7 @@ function PostboxPage() {
           size="small"
           href={`/write/${userId}`}
         >
-          새해 복 많이 받으세요.
+          복주머니 채워주기
         </Button>
       )}
     </div>

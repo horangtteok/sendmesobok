@@ -7,6 +7,7 @@ import { POST_SERVER, USER_SERVER } from "../../Config";
 import { Button, notification, Empty, Row } from "antd";
 import GridCards from "../commons/GridCards";
 import "./Sections/postboxpage.css";
+import Explain from "../commons/Explain";
 
 function PostboxPage() {
   const user = useSelector((state) => state.user);
@@ -21,8 +22,6 @@ function PostboxPage() {
   useEffect(() => {
     fetchPosts();
     getUsername();
-
-    // Kakao.init('179e1817290185a23a3c83d03da61a2e');
   }, []);
 
   const getUsername = () => {
@@ -51,11 +50,12 @@ function PostboxPage() {
 
   const copyUrl = () => {
     let tmp = document.createElement("input");
-    let url = window.location.href;
+    const url = window.location.href;
 
     document.body.appendChild(tmp);
     tmp.value = url;
     tmp.select();
+
     document.execCommand("copy");
     document.body.removeChild(tmp);
 
@@ -64,37 +64,8 @@ function PostboxPage() {
     });
   };
 
-  // const shareKakao = () => {
-  //     const desc = `${Username}님께 연하장을 보내주세요!`;
-
-  //     Kakao.Link.sendDefault({
-  //       objectType: "feed",
-  //         content: {
-  //           title: "새해 복 많이 받으세요 📮",
-  //           description: desc,
-  //           imageUrl: '../img/background.png',
-  //           link: {
-  //             mobileWebUrl: "http://localhost:3000/",
-  //             androidExecParams: "test",
-  //           },
-  //         },
-  //         buttons: [
-  //           {
-  //             title: "엽서보내러 가기",
-  //             link: {
-  //               mobileWebUrl: "http://localhost:3000/",
-  //             },
-  //           },
-  //         ],
-  //     });
-  //   }
-
   const PostboxOpener = () => {
     setOpen(true);
-  };
-
-  const PostboxCloser = () => {
-    setOpen(false);
   };
 
   return (
@@ -170,9 +141,9 @@ function PostboxPage() {
           <Button id="copy-btn" type="primary" onClick={copyUrl} size="small">
             URL 복사하기
           </Button>
-          <Button id="share-btn" type="primary" size="small">
-            카카오톡 공유하기
-          </Button>
+          <Explain 
+            username={Username}
+          />
         </div>
       ) : (
         <Button

@@ -78,15 +78,20 @@ function PostboxPage() {
         alignItems: "center",
         width: "100%",
         height: "100vh",
+        textAlign: 'left',
       }}
     >
       {Username && (
         <>
-          <h2 id="title">{Username} 님의 복주머니</h2>
           <div className="post_number">
-            <h3>
-              <span>{Posts.length}</span>개의 복이 도착했습니다.
-            </h3>
+            <h2 id="title">{Username} 님의 복주머니에</h2>
+            <h2>
+              <span>{Posts.length}</span>개의 복이 쌓였어요.
+            </h2>
+            <p>
+              <img src="https://user-images.githubusercontent.com/43427380/148654883-200da744-a832-4c56-a4fb-ed6efc3baf60.png" alt="message" /> 
+              받은 연하장은 <span>설날</span>에 확인할 수 있어요
+            </p>
           </div>
 
           <img

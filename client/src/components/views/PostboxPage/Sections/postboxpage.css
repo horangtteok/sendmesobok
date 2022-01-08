@@ -1,45 +1,56 @@
-@font-face {
-    font-family: 'MaplestoryOTFLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+.post__app {
+    background-color: #ffe196b0;
+    background-image: url('../../../../assets/backpocket.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
 }
-@font-face {
-    font-family: 'MaplestoryOTFBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-#title {
-    position: absolute;
-    top: 3rem;
-    font-weight: bold;
+.post_app_none {
+    background-color: #ffffff;
+    background-image: url('../../../../assets/widepocket.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .post_number {
-    position: absolute;
-    top: 5rem;
+    position: fixed;
+    top: 3rem;
+    left: 1.8rem;
     letter-spacing: 1px;
 
     z-index: 1;
+    text-align: left;
 }
-.post_number span{
+.post_number #title {
+    font-weight: bold;
+}
+.post_number h2 {
+    margin: 0;
+    font-weight: bold;
+}
+.post_number span {
     color: #a183e2;
-    font-family: 'MaplestoryOTFBold';
-    font-size: 22px;
-
+}
+.post_number p {
+    color:rgba(0, 0, 0, 0.54);
+    margin: 0;
+}
+.post_number p img {
+    width: 24px;
+    margin: 0;
+    margin-right: 8px;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.6));
 }
 
 /* PostBox */
 .postBox {
-    position: absolute;
-    top: 18em;
+    position: fixed;
+    bottom: 5.2em;
 
     overflow-y: auto;
     overflow-x: hidden;
-    height: 52%;
-    max-height: 400px;
+    height: 56%;
+    max-height: 500px;
 }
 .postBox::-webkit-scrollbar {
     width: 10px;
@@ -67,20 +78,6 @@
     transform: scale(1.2);
 }
 
-.post__app {
-    background-color: #ffe196b0;
-    background-image: url('../../../../assets/backpocket.png');
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-position: center;
-}
-.post_app_none {
-    background-color: #ffffff;
-    background-image: url('../../../../assets/widepocket.png');
-    background-size: cover;
-    background-position: center;
-
-}
 #pocket {
     position: fixed;
     top: 40%;

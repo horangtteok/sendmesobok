@@ -46,8 +46,8 @@
 }
 .app {
     font-family: 'MaplestoryOTFLight';
-    text-align: center;
     width: 100%;
 
-    background-color: #ffe196b0;
+    /* background-color: #ffe196b0; */
+    background-color: #f5eee6;
 }

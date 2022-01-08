@@ -98,7 +98,7 @@ function RegisterPage( props ) {
 
                 <br />
                 <Button type="primary" htmlType="submit" className="register-form-button" style={{ minWidth: '100%' }}>
-                    회원가입
+                    복주머니 생성
                 </Button>
             </form>
         </div>

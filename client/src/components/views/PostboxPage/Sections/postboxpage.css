@@ -94,13 +94,12 @@
     display: none;
 }
 
-
 #btnSend {
     position: fixed;
     bottom: 1.4em;
 
     width: 84%;
-    max-width: 400px;
+    max-width: 380px;
     padding: 2rem 0;
     font-size: 18px;
     line-height: 1.8;

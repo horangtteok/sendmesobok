@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { KAKAO_KEY } from '../../Config';
+// import { KAKAO_KEY } from '../../Config';
 import { Button } from 'antd';
 
 
 const Explain = ( props ) => {
     const { Kakao, location } = window;
     const { username } = props;
+    const KAKAO_KEY = process.env.KAKAO_KEY;
 
     useEffect(() => {
         Kakao.init(KAKAO_KEY);

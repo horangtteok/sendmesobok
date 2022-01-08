@@ -7,6 +7,7 @@ const Explain = ( props ) => {
     const { username } = props;
 
     useEffect(() => {
+        alert(process.env.REACT_APP_KAKAO_KEY);
         Kakao.init(process.env.REACT_APP_KAKAO_KEY);
     }, []);
 
@@ -21,6 +22,7 @@ const Explain = ( props ) => {
                 imageUrl: "https://user-images.githubusercontent.com/43427380/148138585-a49628d5-49c9-4cb8-ad7b-42a7f6ad6822.PNG",
                 link: {
                     mobileWebUrl: url,
+                    webUrl: url,
                 },
             },
             buttons: [
@@ -28,6 +30,7 @@ const Explain = ( props ) => {
                     title: "복 보내러 가기",
                     link: {
                         mobileWebUrl: url,
+                        webUrl: url,
                     },
                 },
             ],

@@ -1,18 +1,25 @@
 .sign-title {
     color: #1890ff;
 }
-#login-form {
+#register-form {
     color: #1890ff;
     border-radius: 8px;
     padding: 20px;
     background-color: #FaFaFa;
     filter: drop-shadow(0px 3px 6px rgb(173, 169, 150, 0.4));
+    min-width: 270px;
 }
-#login-form .label {
+#register-form label {
     font-weight: 600;
 }
-#login-form #name{
+#register-form #name,
+#register-form #password {
     margin-bottom: 16px;
+}
+#register-form .confirm-text {
+    color: #FF5F6D;
+    font-size: 11px;
+    font-family: 'Malgun Gothic';
 }
 
 .gotoRegister {

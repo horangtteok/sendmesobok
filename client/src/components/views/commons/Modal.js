@@ -43,7 +43,7 @@ const Modal = ( props ) => {
             <div className="modal_title">{title}</div>
             <div className="modal_content">{message}</div>
 
-            <Button className='btn_delete' onClick={deleteMessage}>삭제하기</Button>
+            {/* <Button className='btn_delete' onClick={deleteMessage}>삭제하기</Button> */}
         </div>
       </div>
     );

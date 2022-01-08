@@ -1,4 +1,6 @@
-# boiler-plate
+# 소복소복: Send me sobok
+
+"Bok" means luck in Korean. In the new year, Koreans wish a happy new year by sharing words of blessing with people around them.
 
 ## Stack
 
@@ -12,7 +14,7 @@ BackEnd
 
 <br>
 
-## Get Started
+## How to Get Started
 
 - Create /server/config/dev.js: need mongoDB URI
   ```javascript
@@ -29,7 +31,6 @@ npm run dev
 <br>
 
 ### Features
-1. Data schema: User
+1. Send Post with Bok
 2. Login/ Logout/ Register
-4. Auth hoc
-    - Bcrypt: password encryption
+3. 

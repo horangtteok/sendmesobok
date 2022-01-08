@@ -43,29 +43,40 @@ function Message( props ) {
             .then(res => {
                 if(res.data.success) {
                     notification['success']({
-                        message: '엽서를 무사히 전달했습니다.',
+                        message: '복을 무사히 전달했습니다.',
+                        description: ' 잠시 후 다시시도해주세요.'
                     });
                     setName("");
                     setMessage("");
                     navigate(`/post/${userId}`);
                 } else {
                     notification['error']({
-                        message: '엽서 전송에 실패했습니다.',
+                        message: '헉! 까치에게 복을 뺏겼어요.',
+                        description: ' 잠시 후 다시시도해주세요.'
                     });
                 }
             })
     }
 
+    const words = [
+        "복을 가득담은",
+        "까치에게서 뺏어온",
+        "나이 한 살 품은",
+        "검은 호랑이가 빌려준",
+        "행福을 비는",
+    ]
+
     return (
         <div className='message_form' >
-            <h3>나이 한 살 품은 <span>{decos[deco]}</span></h3>
-            <form id='' 
+            <h3>{words[Math.floor(Math.random() * words.length)]} {decos[deco]}</h3>
+            <form id='send_form' 
                     onSubmit={onSubmitHandler} 
                     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 auto' }}
             >
                 <img src={`${process.env.PUBLIC_URL}/img/posts/post${deco}.png`} alt='final choice' />
                 <Input
                     id="name" 
+                    required
                     placeholder="닉네임을 입력하세요." 
                     type="text" 
                     value={ Name }
@@ -73,7 +84,8 @@ function Message( props ) {
                 />
                 <Input.TextArea 
                     id="message"
-                    placeholder='메시지를 입력하세요.'
+                    required
+                    placeholder='복을 담은 메시지를 입력하세요.'
                     type='text'
                     value={ Message }
                     onChange={onMessageHandler}

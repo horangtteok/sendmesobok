@@ -9,7 +9,7 @@ function LandingPage( props ) {
             <div className="app" style={{ display: 'flex', justifyContent: 'center',
                                         flexDirection: 'column', alignItems: 'center',
                                         width: '100%', height: '100vh',
-                                        backgroundImage: "url('img/back-repeat.gif')",
+                                        backgroundImage: "url('img/back-repeat-red.gif')",
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
                                         backgroundRepeat: 'no-repeat',

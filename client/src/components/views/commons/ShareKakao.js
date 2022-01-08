@@ -16,7 +16,7 @@ const ShareKakao = ( props ) => {
             objectType: "feed",
             content: {
                 title: "소복소복",
-                description: `${username}님께 연하장을 보내주세요!`,
+                description: `${username}님의 복주머니에 복을 채워주세요!`,
                 imageUrl: "https://user-images.githubusercontent.com/43427380/148138585-a49628d5-49c9-4cb8-ad7b-42a7f6ad6822.PNG",
                 link: {
                     mobileWebUrl: url,
@@ -25,7 +25,7 @@ const ShareKakao = ( props ) => {
             },
             buttons: [
                 {
-                    title: "복 보내러 가기",
+                    title: "복주머니 채워주기",
                     link: {
                         mobileWebUrl: url,
                         webUrl: url,

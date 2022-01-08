@@ -10,6 +10,7 @@ import RegisterPage from './views/RegisterPage/RegisterPage';
 import PostboxPage from './views/PostboxPage/PostboxPage';
 import WritePage from "./views/WritePage/WritePage";
 import NavBar from "./views/NavBar/NavBar";
+import Footer from "./views/Footer/Footer";
 import Auth from '../hoc/auth';
 import './App.css';
 
@@ -17,6 +18,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Footer />
       <Router>
         <NavBar />
         <div>
@@ -29,7 +31,6 @@ function App() {
           </Routes> 
         </div>
       </Router>
-      {/* <Footer /> */}
     </div>
   );
 }

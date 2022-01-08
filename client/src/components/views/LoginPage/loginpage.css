@@ -1,8 +1,8 @@
 .sign-title {
-    color: #1890ff;
+    color: #a788e9;
 }
 #login-form {
-    color: #1890ff;
+    color: #a790d8;
     border-radius: 8px;
     padding: 20px;
     background-color: #FaFaFa;
@@ -15,8 +15,38 @@
     margin-bottom: 16px;
 }
 
+.login-form-button {
+    background-color: #a790d8 !important;
+    border-color: #a790d8 !important;
+    border-radius: 6px;
+}
+.login-form-button:hover,
+.login-form-button:focus {
+    background-color: #b8a9d6 !important;
+    border-color: #b8a9d6 !important;
+}
+.login-form-button:active {
+    box-shadow: 0 0 0 1px rgb(161 131 226 / 20%);
+}
+
+#name:hover,
+#name:focus,
+#password:hover,
+#password:focus {
+    border-color: #b7aad3 !important;
+}
+#name:focus,
+#password:focus {
+    box-shadow: 0 0 0 2px rgb(161 131 226 / 20%);
+    border-right-width: 1px !important;
+    outline: 0;
+}
+
 .gotoRegister {
     margin-top: 0.4rem;
     font-size: 12px;
-    color: #137bdd;
+    color: #906cdf6d;
+}
+.gotoRegister:hover {
+    color: #a790d8;
 }

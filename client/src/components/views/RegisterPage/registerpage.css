@@ -1,8 +1,5 @@
-.sign-title {
-    color: #1890ff;
-}
 #register-form {
-    color: #1890ff;
+    color: #a790d8;
     border-radius: 8px;
     padding: 20px;
     background-color: #FaFaFa;
@@ -16,14 +13,33 @@
 #register-form #password {
     margin-bottom: 16px;
 }
+#confirmPassword:hover,
+#confirmPassword:focus {
+    border-color: #b7aad3 !important;
+}
+#name:focus,
+#confirmPassword:focus {
+    box-shadow: 0 0 0 2px rgb(161 131 226 / 20%);
+    border-right-width: 1px !important;
+    outline: 0;
+}
+
 #register-form .confirm-text {
     color: #FF5F6D;
     font-size: 11px;
     font-family: 'Malgun Gothic';
 }
 
-.gotoRegister {
-    margin-top: 0.4rem;
-    font-size: 12px;
-    color: #137bdd;
+.register-form-button {
+    background-color: #a790d8 !important;
+    border-color: #a790d8 !important;
+    border-radius: 6px;
+}
+.register-form-button:hover,
+.register-form-button:focus {
+    background-color: #b8a9d6 !important;
+    border-color: #b8a9d6 !important;
+}
+.register-form-button:active {
+    box-shadow: 0 0 0 1px rgb(161 131 226 / 20%);
 }

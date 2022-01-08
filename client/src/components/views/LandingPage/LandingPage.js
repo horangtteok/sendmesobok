@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Button } from 'antd';
 import './landingpage.css';
 
 function LandingPage( props ) {  

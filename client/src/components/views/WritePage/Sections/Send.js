@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { POST_SERVER } from '../../../Config';

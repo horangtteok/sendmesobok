@@ -42,19 +42,23 @@ function RegisterPage( props ) {
     const onSubmitHandler = (event) => {
         event.preventDefault();
 
-        let body = {
-            name: Name,
-            password: Password,
-        }
-
-        dispatch(registerUser(body))
-        .then(response => {
-            if(response.payload.success) {
-                navigate('/login');
-            } else {
-                alert(response.payload.message);
+        if(!Confirm){
+            alert("비밀번호를 확인해주세요.")
+        } else {
+            let body = {
+                name: Name,
+                password: Password,
             }
-        });
+    
+            dispatch(registerUser(body))
+            .then(response => {
+                if(response.payload.success) {
+                    navigate('/login');
+                } else {
+                    alert("회원가입에 실패했습니다.");
+                }
+            });
+        }
     }
 
     return (
@@ -68,6 +72,7 @@ function RegisterPage( props ) {
                 <label>닉네임</label>
                 <Input
                     id="name" 
+                    required
                     placeholder="2자리 이상"
                     type="text" 
                     value={ Name } 
@@ -77,15 +82,17 @@ function RegisterPage( props ) {
                 <label>비밀번호</label>
                 <Input 
                     id="password"
+                    required
                     placeholder="4자리 이상"
                     type="password" 
                     value={ Password }
-                    onChange={onPasswordHandler} 
+                    onChange={onPasswordHandler}
                 />
 
                 <label>비밀번호 확인</label>
                 <Input
-                    id="confrimPassword"
+                    id="confirmPassword"
+                    required
                     placeholder="비밀번호를 확인하세요."
                     type="password" 
                     value={ ConfirmPassword } 

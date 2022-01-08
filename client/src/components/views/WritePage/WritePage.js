@@ -9,7 +9,6 @@ function WritePage() {
 
     const [Stage, setStage] = useState(0);
     const [Deco, setDeco] = useState(1);
-
     
     const onPrevHandler = () => {
         if(Stage > 0) {
@@ -30,11 +29,9 @@ function WritePage() {
                         justifyContent: 'center', alignItems: 'center',
                         width: '100%', height: '100vh'
         }}>
-            <Button className='prev_btn' href="#" onClick={onPrevHandler}>
-                {'<  이전'}
-            </Button>
             {Stage < 1 ?
             <div className='deco'>
+                <h3>어떤 새해 선물을 보낼까요?</h3>
                 <ul className='deco-grid'>
                 {[1,2,3,4,5,6].map((n, idx) => {
                     return(
@@ -49,7 +46,6 @@ function WritePage() {
                         </li>
                     )
                 })}
-                
                 </ul>
                 
                 <Button type="primary" htmlType="submit" size='large' onClick={onNextHandler}>
@@ -57,7 +53,12 @@ function WritePage() {
                 </Button>
             </div>
             :
+            <>
+            <Button className='prev_btn' href="#" onClick={onPrevHandler}>
+                {'<  이전'}
+            </Button>
             <Send userId={userId} deco={Deco} />
+            </>
             }
             
         </div>

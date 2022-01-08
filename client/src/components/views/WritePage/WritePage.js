@@ -31,7 +31,7 @@ function WritePage() {
         }}>
             {Stage < 1 ?
             <div className='deco'>
-                <h3>어떤 새해 선물을 보낼까요?</h3>
+                <h2>어떤 물건에 복을 담아 보낼까요?</h2>
                 <ul className='deco-grid'>
                 {[1,2,3,4,5,6].map((n, idx) => {
                     return(

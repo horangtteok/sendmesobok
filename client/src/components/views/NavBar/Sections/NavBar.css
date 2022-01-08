@@ -62,8 +62,7 @@
 .menu_drawer .ant-drawer-body {
   padding: 0 !important;
 
-  /* background-color: #3e91f7; */
-
+  background-color: #f5eee6;
 }
 /* align header of Drawer with header of page */
 .menu_drawer .ant-drawer-header {
@@ -72,7 +71,7 @@
   font-family: 'MaplestoryOTFBold';
   letter-spacing: 2px;
 
-  /* background-color: #3e91f7; */
+  background-color: #f5eee6;
 }
 
 @media (max-width: 767px) {
@@ -92,6 +91,9 @@
   .menu__container .ant-menu-item,
   .menu__container .ant-menu-submenu-title {
     padding: 1px 20px;
+  }
+  .ant-menu-item:active {
+    background-color: #e6e1db !important;
   }
 
   .menu__logo a {

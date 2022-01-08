@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { POST_SERVER } from '../../../Config';
@@ -17,6 +17,19 @@ function Message( props ) {
         5: '윷놀이',
         6: '까치'
     }
+    const words = [
+        "복을 가득담은",
+        "까치에게서 뺏어온",
+        "나이 한 살 품은",
+        "검은 호랑이가 빌려준",
+        "행복한",
+    ]
+
+    const [Word, setWord] = useState(0)
+    useEffect(() => {
+        setWord(Math.floor(Math.random() * words.length));
+    }, [])
+
 
     const [Name, setName] = useState("")
     const [Message, setMessage] = useState("")
@@ -58,17 +71,9 @@ function Message( props ) {
             })
     }
 
-    const words = [
-        "복을 가득담은",
-        "까치에게서 뺏어온",
-        "나이 한 살 품은",
-        "검은 호랑이가 빌려준",
-        "행福을 비는",
-    ]
-
     return (
         <div className='message_form' >
-            <h3>{words[Math.floor(Math.random() * words.length)]} {decos[deco]}</h3>
+            <h2>{Word !== 0 && words[Word] } {decos[deco]}</h2>
             <form id='send_form' 
                     onSubmit={onSubmitHandler} 
                     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 auto' }}

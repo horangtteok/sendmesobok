@@ -15,20 +15,24 @@ a.prev_btn:hover {
 }
 
 .deco {
-    padding: 0 14px;
     color: #1890ff;
+    text-align: center;
+}
+.deco h2 {
+    color: #a790d8;
+    font-family: 'Katuri';
 }
 ul {
     padding: 0;
     list-style: none;
 }
 .deco-grid {
-    width: 85%;
-    max-width: 280px;
+    width: 82%;
+    max-width: 350px;
     display: grid;
-    grid-gap: 16px;
+    grid-gap: 15px;
     grid-template-columns: repeat(2,1fr);
-    margin: 0 auto 20px auto;
+    margin: 24px auto 30px auto;
 }
 .deco-cell {
     display: flex;
@@ -41,7 +45,7 @@ ul {
     filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.1));
 
     width: 100%;
-    height: auto;
+    height: 100%;
 
     cursor: pointer;
 }
@@ -60,6 +64,11 @@ ul {
 /* Sections/Send */
 .message_form {
     width: 86%;
+    text-align: center;
+}
+.message_form h2 {
+    color: #a790d8;
+    font-family: 'Katuri';    
 }
 .message_form form{
     width: 100%;
@@ -70,17 +79,30 @@ ul {
     margin-bottom: 24px;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
 }
-.message_form input,  .message_form textarea{
+.message_form input, .message_form textarea{
     border: 2px solid #b1b1b1;
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 16px;
+    width: 92%;
 }
 .message_form textarea.ant-input {
-    height: 100px;
+    height: 120px;
+    width: 92%;
     transition: all 0.3s, height 0s;
 }
-
+.message_form form button, .deco button {
+    background-color: #a790d8 !important;
+    border-color: #a790d8;
+    border-radius: 6px;
+}
+.message_form form button:hover,
+.message_form form button:focus,
+.deco button:hover,
+.deco button:focus {
+    background-color: #b8a9d6 !important;
+    border-color: #b8a9d6;
+}
 .message_form input:hover,  
 .message_form textarea:hover,
 .message_form input:focus, 

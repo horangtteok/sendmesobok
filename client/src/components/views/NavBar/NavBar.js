@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Drawer, Button } from 'antd';
-import { AlignRightOutlined } from '@ant-design/icons';
+import { MenuOutlined } from '@ant-design/icons';
 import RightMenu from './Sections/RightMenu';
 import './Sections/NavBar.css';
 
@@ -30,7 +30,7 @@ function NavBar() {
                 onClick={showDrawer}
                 style={{ background:'none', border: 'none', color: '#4B92FD' }}
             >
-                <AlignRightOutlined />
+                <MenuOutlined />
             </Button>
             <Drawer
                 title="메뉴"

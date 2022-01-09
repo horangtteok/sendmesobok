@@ -28,7 +28,7 @@ function NavBar() {
                 className="menu__mobile-button"
                 type="default"
                 onClick={showDrawer}
-                style={{ background:'none', border: 'none', color: '#4B92FD' }}
+                style={{ background:'none', border: 'none', color: '#a790d8' }}
             >
                 <MenuOutlined />
             </Button>

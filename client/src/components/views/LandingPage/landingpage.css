@@ -1,8 +1,10 @@
 .btn_start {
-    background-color: rgb(13, 138, 255);
-    border-color: #1890ff;
     border-radius: 0.2em;
-    color: #fff;
+
+    background-color: #f5eee6 !important;
+    border-color: #f5eee6;
+    color: #906cdf;
+
     line-height: 1.5;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 15%);
     font-size: 20px;
@@ -17,10 +19,10 @@
 
     cursor: pointer;
 }
-.btn_start:hover {
-    background-color: rgb(92, 176, 255);
+.btn_start:hover,
+.btn_start:focus {
+    color: #906cdf;
 
-    color: #fff;
     border-radius: 0.2em;
     padding: 5px 15px;
 }

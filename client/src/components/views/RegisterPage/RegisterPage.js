@@ -55,7 +55,9 @@ function RegisterPage( props ) {
                 if(response.payload.success) {
                     navigate('/login');
                 } else {
-                    alert("회원가입에 실패했습니다.");
+                    if(response.payload.message){
+                        alert(response.payload.message);
+                    }
                 }
             });
         }

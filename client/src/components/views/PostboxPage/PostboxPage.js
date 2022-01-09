@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { POST_SERVER, USER_SERVER } from "../../Config";
-import { Button, notification, Empty, Row } from "antd";
+import { Button, notification, Row } from "antd";
+import { SmileOutlined } from '@ant-design/icons';
 import GridCards from "../commons/GridCards";
 import "./Sections/postboxpage.css";
 import ShareKakao from "../commons/ShareKakao";
@@ -97,7 +98,13 @@ function PostboxPage() {
           />
 
           {Posts.length < 1 ? (
-            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+            <div style={{ textAlign: "center", color: "#f5eee6" }}>
+              <SmileOutlined size="large" />
+              <p>
+                복주머니가 비었어요! <br />
+                주변 사람들에게 내 복주머니를 공유하세요!
+              </p>
+            </div>
           ) : (
             <div className="postBox">
               {/* 엽서를 grid로 rendering하는 부분 */}

@@ -2,9 +2,6 @@
 @font-face {
     font-family: 'MaplestoryOTFLight';
     src: url('../fonts/Maplestory Light.ttf') format('truetype');
-}@font-face {
-    font-family: 'MaplestoryOTFBold';
-    src: url('../fonts/Maplestory Bold.ttf') format('truetype');
 }
 @font-face {
     font-family: 'CookieRun-Regular';

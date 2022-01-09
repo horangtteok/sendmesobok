@@ -4,7 +4,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-family: 'MaplestoryOTFBold';
+    font-family: 'MaplestoryOTFLight';
+    font-weight: bold;
     z-index: 1;
 }
 .footer a {

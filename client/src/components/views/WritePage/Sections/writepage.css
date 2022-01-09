@@ -68,7 +68,8 @@ ul {
 }
 .message_form h2 {
     color: #a790d8;
-    font-family: 'MaplestoryOTFBold';    
+    font-family: 'MaplestoryOTFLight';
+    font-weight: bold;
 }
 .message_form form{
     width: 100%;

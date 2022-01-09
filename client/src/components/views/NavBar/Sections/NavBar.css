@@ -84,8 +84,8 @@
 /* align header of Drawer with header of page */
 .menu_drawer .ant-drawer-header {
   padding: 14px 24px !important;
+  font-family: 'MaplestoryOTFLight';
   font-weight: bold;
-  font-family: 'MaplestoryOTFBold';
   letter-spacing: 2px;
 
   background-color: #f5eee6;

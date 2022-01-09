@@ -5,6 +5,7 @@
     transform: translate(-50%, -50%);
 
     font-family: 'MaplestoryOTFBold';
+    z-index: 1;
 }
 .footer a {
     color: rgb(0,0,0, 0.2) !important;

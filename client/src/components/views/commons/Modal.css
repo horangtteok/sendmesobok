@@ -44,6 +44,8 @@
     width: 100%;
     text-align: left;
     padding: 0 16px;
+    text-align: center;
+    color: #a790d8;
 }
 
 .modal__container .modal .modal__img {

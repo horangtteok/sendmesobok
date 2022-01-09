@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 2px;
     left: 50%;
     transform: translate(-50%, -50%);

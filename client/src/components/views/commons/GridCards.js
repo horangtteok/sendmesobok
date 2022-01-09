@@ -31,15 +31,10 @@ function GridCards(props) {
         return (
             <>
             <Col lg={6} md={8} xs={8}>
-                <button
-                    onClick={modalClose} 
-                    style={{ background: "none", border: "none", width:"70px" }}
-                >
-                    <div className='post'>
-                        <p>{props.name}</p>
-                        <img className='post__img' src={props.image} alt={props.name} />
-                    </div>
-                </button>
+                <div className='post' onClick={modalClose} >
+                    <p>{props.name}</p>
+                    <img className='post__img' src={props.image} alt={props.name} />
+                </div>
             </Col>
 
             { modalOpen && 

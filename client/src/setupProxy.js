@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://sendmesobok.netlify.app/',
+      target: 'https://back-sendmesobok.herokuapp.com',
       changeOrigin: true,
     })
   );

@@ -55,8 +55,7 @@ function Message( props ) {
             .then(res => {
                 if(res.data.success) {
                     notification['success']({
-                        message: '복을 무사히 전달했습니다.',
-                        description: ' 잠시 후 다시시도해주세요.'
+                        message: '주머니에 복이 쏙!'
                     });
                     setName("");
                     setMessage("");

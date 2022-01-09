@@ -63,8 +63,9 @@
     padding: 8px 0;
 }
 .postBox__table .post img{
-    width: 70%;
-    max-width: 80px;
+    width: 80%;
+    max-width: 90px;
+    min-width: 64px;
     filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
 }
 .postBox__table .post p {
@@ -75,6 +76,9 @@
 }
 .postBox__table .post:hover {
     transform: scale(1.2);
+}
+.postBox__table .post_blank {
+    min-width: 3rem;
 }
 
 #pocket {

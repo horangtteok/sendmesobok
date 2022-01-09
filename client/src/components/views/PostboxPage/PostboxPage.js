@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { POST_SERVER, USER_SERVER } from "../../Config";
-import { Button, notification, Row } from "antd";
-import { SmileOutlined } from '@ant-design/icons';
+import { Button, notification, Row, Col } from "antd";
+import { SmileOutlined } from "@ant-design/icons";
 import GridCards from "../commons/GridCards";
 import "./Sections/postboxpage.css";
 import ShareKakao from "../commons/ShareKakao";
@@ -16,7 +16,7 @@ function PostboxPage() {
   const [Username, setUsername] = useState("");
   const [Posts, setPosts] = useState([]);
   const [Open, setOpen] = useState(false);
-  
+
   useEffect(() => {
     fetchPosts();
     getUsername();
@@ -31,7 +31,7 @@ function PostboxPage() {
       }
     });
   };
-  
+
   const fetchPosts = () => {
     // userId: 받는 사람 userId
     // userId: localStorage.getItem('userId')
@@ -66,6 +66,31 @@ function PostboxPage() {
     setOpen(true);
   };
 
+  const renderBlank = () => {
+    return (
+      <>
+      <React.Fragment key={-1}>              
+        <Col lg={6} md={8} xs={8}>
+            <div className="post_blank">
+            </div>
+        </Col>
+      </React.Fragment>
+      <React.Fragment key={-2}>              
+        <Col lg={6} md={8} xs={8}>
+            <div className="post_blank">
+            </div>
+        </Col>
+      </React.Fragment>
+      <React.Fragment key={-3}>              
+        <Col lg={6} md={8} xs={8}>
+            <div className="post_blank">
+            </div>
+        </Col>
+      </React.Fragment>
+      </>
+    )
+  }
+
   return (
     <div
       className={`app ${!Open ? "post__app" : "post_app_none"}`}
@@ -86,7 +111,10 @@ function PostboxPage() {
               <span>{Posts.length}</span>개의 복이 쌓였어요.
             </h2>
             <p>
-              <img src="https://user-images.githubusercontent.com/43427380/148654883-200da744-a832-4c56-a4fb-ed6efc3baf60.png" alt="message" /> 
+              <img
+                src="https://user-images.githubusercontent.com/43427380/148654883-200da744-a832-4c56-a4fb-ed6efc3baf60.png"
+                alt="message"
+              />
               받은 연하장은 <span>설날</span>에 확인할 수 있어요
             </p>
           </div>
@@ -110,8 +138,11 @@ function PostboxPage() {
               {/* 엽서를 grid로 rendering하는 부분 */}
               {Open && (
                 <Row className="postBox__table" gutter={[3, Posts.length / 3]}>
+                  
                   {Posts &&
-                    Posts.map((post, index) => (
+                  <>
+                    {Posts.length <= 3 && renderBlank() }
+                    {Posts.map((post, index) => (
                       <React.Fragment key={index}>
                         {user.userData && user.userData.isAuth ? (
                           <GridCards
@@ -128,6 +159,8 @@ function PostboxPage() {
                         )}
                       </React.Fragment>
                     ))}
+                  </>
+                  }
                 </Row>
               )}
             </div>
@@ -149,9 +182,7 @@ function PostboxPage() {
           <Button id="copy-btn" type="primary" onClick={copyUrl} size="small">
             URL 복사하기
           </Button>
-          <ShareKakao 
-            username={Username}
-          />
+          <ShareKakao username={Username} />
         </div>
       ) : (
         <Button

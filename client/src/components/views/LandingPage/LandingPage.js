@@ -7,7 +7,7 @@ function LandingPage( props ) {
     return (
         <>
         
-            <div className="app" style={{ backgroundImage: "url('img/back-repeat-red.gif')" }}>             
+            <div className="app" style={{ backgroundImage: "url('img/back-repeat-red2.gif')" }}>             
                 {user.userData && user.userData.isAuth  ?
                     <a className="btn_start" href={`/post/${user.userData._id}`}>복주머니로 이동</a>
                     : 

@@ -33,4 +33,3 @@ npm run dev
 ### Features
 1. Send Post with Bok
 2. Login/ Logout/ Register
-3. 

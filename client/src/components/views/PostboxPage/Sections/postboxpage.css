@@ -30,14 +30,8 @@
     color: #a183e2;
 }
 .post_number p {
-    color:rgba(0, 0, 0, 0.54);
+    color:rgb(58, 54, 54);
     margin: 0;
-}
-.post_number p img {
-    width: 24px;
-    margin: 0;
-    margin-right: 8px;
-    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.6));
 }
 /* PostBox */
 .postBox {

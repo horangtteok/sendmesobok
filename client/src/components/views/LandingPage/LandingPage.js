@@ -9,8 +9,7 @@ function LandingPage( props ) {
             <div className="app">
                 <div class="video-wrapper">
                     <video autoPlay muted id="back-video">
-                        <source src="https://user-images.githubusercontent.com/43427380/148701456-dba9e7ce-afb3-4ad4-834a-c12574ad6403.mp4
-" type="video/mp4" />
+                        <source src="img/background.mp4" type="video/mp4" />
                         <strong>vieo tag를 지원하지 않는 브라우저입니다.</strong>
                     </video>
                 </div>            

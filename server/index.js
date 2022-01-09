@@ -26,7 +26,7 @@ app.use(cors());
 app.use('/api/users', require('./routes/users'));
 app.use('/api/posts', require('./routes/posts'));
 
-app.get('/', (req, res) => res.send('<h1>Hello World! 반갑습니다!</h1>'));
+app.get('/', (req, res) => res.send('<h1>Send Me Sobok</h1>'));
 
 
 const port = process.env.PORT || 8080;

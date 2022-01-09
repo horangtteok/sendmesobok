@@ -9,12 +9,22 @@ const { Post } = require('../models/Post')
 // api
 router.post('/getposts', (req, res) => {
 
-    // mongoDB에서 favorite 숫자를 가져오기
     Post.find({ "userid": req.body.userId })
-        .exec((err, info) => { // query를 돌려 err, info 받음
+        .exec((err, posts) => { // query를 돌려 err, info 받음
             if (err) return res.status(400).send(err) // err 발생 시, client에 error 보냄
-            // 프론트에 다시 숫자 정보 보내주기
-            return res.status(200).json({ success: true, posts: info }) // 200: 성공을 의미
+
+            let securedPost = [];
+            for (var i=0; i < posts.length; i++){
+                const post = new Post({
+                    userid: posts[i].userid,
+                    name: posts[i].name,
+                    message: "메시지는 설날에 확인할 수 있어요!",
+                    deco: posts[i].deco,
+                })
+                securedPost.push(post)
+            }
+            
+            return res.status(200).json({ success: true, posts: securedPost }) // 200: 성공을 의미
         })
 })
 

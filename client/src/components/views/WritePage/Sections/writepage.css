@@ -20,7 +20,7 @@ a.prev_btn:hover {
 }
 .deco h2 {
     color: #a790d8;
-    font-family: 'Katuri';
+    font-family: 'MaplestoryOTFLight';
 }
 ul {
     padding: 0;
@@ -68,7 +68,7 @@ ul {
 }
 .message_form h2 {
     color: #a790d8;
-    font-family: 'Katuri';    
+    font-family: 'MaplestoryOTFBold';    
 }
 .message_form form{
     width: 100%;

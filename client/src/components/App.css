@@ -1,33 +1,14 @@
 /* font */
 @font-face {
     font-family: 'MaplestoryOTFLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
+    src: url('../fonts/Maplestory Light.ttf') format('truetype');
+}@font-face {
     font-family: 'MaplestoryOTFBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/Maplestory Bold.ttf') format('truetype');
 }
 @font-face {
     font-family: 'CookieRun-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'CookieRunOTF-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Katuri';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/CookieRun Regular.ttf') format('truetype');
 }
 
 #root {

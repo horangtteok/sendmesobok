@@ -20,7 +20,16 @@
 }
 .app {
     font-family: 'MaplestoryOTFLight';
-    width: 100%;
-
+    
     background-color: #f5eee6;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

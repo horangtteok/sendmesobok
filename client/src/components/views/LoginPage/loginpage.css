@@ -1,10 +1,17 @@
+.login-div {
+    text-align: center;
+}
 .sign-title {
     color: #a788e9;
 }
 #login-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
     color: #a790d8;
     border-radius: 8px;
-    padding: 20px;
+    padding: 26px;
     background-color: #FaFaFa;
     filter: drop-shadow(0px 3px 6px rgb(173, 169, 150, 0.4));
 }

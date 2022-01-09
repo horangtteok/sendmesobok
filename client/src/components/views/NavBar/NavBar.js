@@ -16,7 +16,7 @@ function NavBar() {
     };
 
     return (
-    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
+    <nav className="menu">
         <div className="menu__logo">
             <a href="/">소복소복</a>
         </div>
@@ -28,7 +28,6 @@ function NavBar() {
                 className="menu__mobile-button"
                 type="default"
                 onClick={showDrawer}
-                style={{ background:'none', border: 'none', color: '#a790d8' }}
             >
                 <MenuOutlined />
             </Button>

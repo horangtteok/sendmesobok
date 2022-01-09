@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
 .menu {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+
   padding: 0 20px;
   overflow: auto;
   background-color: transparent;
@@ -59,6 +63,10 @@
   padding: 6px;
   margin-top: 8px;
   display: none !important; /* use of important to overwrite ant-btn */
+
+  background: none;
+  border: none;
+  color: #a790d8;
 }
 
 .menu_drawer {

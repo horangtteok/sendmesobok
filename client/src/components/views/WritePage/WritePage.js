@@ -25,10 +25,7 @@ function WritePage() {
     }
 
     return (
-        <div className="app" style={{ display: 'flex', flexDirection:'column',
-                        justifyContent: 'center', alignItems: 'center',
-                        width: '100%', height: '100vh'
-        }}>
+        <div className="app">
             {Stage < 1 ?
             <div className='deco'>
                 <h2>어떤 물건에 복을 담아 보낼까요?</h2>

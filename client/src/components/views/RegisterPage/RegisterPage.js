@@ -64,9 +64,7 @@ function RegisterPage( props ) {
     }
 
     return (
-        <div className="app" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                        width: '100%', height: '100vh', flexDirection: 'column',
-        }}>
+        <div className="app">
             <h2 className='sign-title'>회원 가입</h2>
             <form id='register-form' style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}
                 onSubmit={onSubmitHandler}
@@ -106,7 +104,7 @@ function RegisterPage( props ) {
                 }
 
                 <br />
-                <Button type="primary" htmlType="submit" className="register-form-button" style={{ minWidth: '100%' }}>
+                <Button type="primary" htmlType="submit" className="register-form-button">
                     복주머니 생성
                 </Button>
             </form>

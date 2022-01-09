@@ -7,8 +7,8 @@ import { POST_SERVER, USER_SERVER } from "../../Config";
 import { Button, notification, Row, Col } from "antd";
 import { SmileOutlined } from "@ant-design/icons";
 import GridCards from "../commons/GridCards";
-import "./Sections/postboxpage.css";
 import ShareKakao from "../commons/ShareKakao";
+import "./Sections/postboxpage.css";
 
 function PostboxPage() {
   const user = useSelector((state) => state.user);
@@ -94,14 +94,6 @@ function PostboxPage() {
   return (
     <div
       className={`app ${!Open ? "post__app" : "post_app_none"}`}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
     >
       {Username && (
         <>
@@ -138,7 +130,6 @@ function PostboxPage() {
               {/* 엽서를 grid로 rendering하는 부분 */}
               {Open && (
                 <Row className="postBox__table" gutter={[3, Posts.length / 3]}>
-                  
                   {Posts &&
                   <>
                     {Posts.length <= 3 && renderBlank() }

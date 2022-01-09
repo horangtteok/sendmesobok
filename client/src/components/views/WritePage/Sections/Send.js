@@ -6,7 +6,7 @@ import { POST_SERVER } from '../../../Config';
 import { Button, Input, notification } from "antd";
 
 function Message( props ) {
-    const { userId, deco } = props;
+    const { userId, deco, Word } = props;
     let navigate = useNavigate();
 
     const decos = {
@@ -25,13 +25,9 @@ function Message( props ) {
         "행복한",
     ]
 
-    const [Word, setWord] = useState(0)
     const [Name, setName] = useState("")
     const [Message, setMessage] = useState("")
-    
-    useEffect(() => {
-        setWord(Math.floor(Math.random() * words.length));
-    }, [])
+
 
     const onNameHandler = (event) => {
         setName(event.currentTarget.value);

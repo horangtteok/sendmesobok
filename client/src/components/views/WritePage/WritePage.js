@@ -54,7 +54,7 @@ function WritePage() {
             <Button className='prev_btn' href="#" onClick={onPrevHandler}>
                 {'<  이전'}
             </Button>
-            <Send userId={userId} deco={Deco} />
+            <Send userId={userId} deco={Deco} Word={Math.floor(Math.random() * 5)} />
             </>
             }
             

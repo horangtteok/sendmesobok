@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../../../_actions/user_action';
-import { Button, Input } from 'antd';
+import { confirmName, registerUser } from '../../../_actions/user_action';
+import { Button, Input, Tooltip, notification } from 'antd';
+import { CheckCircleFilled } from '@ant-design/icons';
 import './registerpage.css';
 
 function RegisterPage( props ) {
     const dispatch = useDispatch();
 
-    const [Password, setPassword] = useState("");
     const [Name, setName] = useState("");
+    const [ConfirmName, setConfirmName] = useState(false);
+    const [confirmNameCmt, setconfirmNameCmt] = useState("✔ 닉네임 중복을 확인하세요.")
+    const [Password, setPassword] = useState("");
     const [ConfirmPassword, setConfirmPassword] = useState("");
     const [Confirm, setConfirm] = useState(false);
 
@@ -17,6 +20,29 @@ function RegisterPage( props ) {
 
     const onNameHandler = (event) => {
         setName(event.currentTarget.value);
+        setConfirmName(false);
+        setconfirmNameCmt("✔ 닉네임 중복을 확인하세요.");
+    }
+
+    const onConfirmNameHandler = () => {
+        if(Name === ""){
+            alert("닉네임을 입력하세요.");
+        } else {
+            let body = {
+                name: Name,
+            }
+
+            dispatch(confirmName(body))
+            .then(response => {
+                if(response.payload.success) {
+                    setConfirmName(true);
+                    setconfirmNameCmt("사용가능한 닉네임입니다.")
+                } else {
+                    setConfirmName(false);
+                    setconfirmNameCmt("이미 사용 중인 닉네임입니다.")
+                }
+            });
+        }
     }
 
     const onPasswordHandler = (event) => {
@@ -41,9 +67,12 @@ function RegisterPage( props ) {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-
-        if(!Confirm){
-            alert("비밀번호를 확인해주세요.")
+        
+        if(!ConfirmName){
+            alert("닉네임 중복을 확인해주세요.");
+        }
+        else if(!Confirm){
+            alert("비밀번호를 확인해주세요.");
         } else {
             let body = {
                 name: Name,
@@ -56,7 +85,11 @@ function RegisterPage( props ) {
                     navigate('/login');
                 } else {
                     if(response.payload.message){
-                        alert(response.payload.message);
+                        notification['error']({
+                            message: '회원가입 실패!',
+                            description:
+                              '잠시 후 다시 시도해주세요.',
+                          });
                     }
                 }
             });
@@ -68,17 +101,29 @@ function RegisterPage( props ) {
             <h2 className='sign-title'>회원 가입</h2>
             <form id='register-form' style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}
                 onSubmit={onSubmitHandler}
-            >
+            >   
                 <label>닉네임</label>
                 <Input
-                    id="name" 
-                    required
-                    placeholder="2자리 이상"
-                    type="text" 
-                    value={ Name } 
-                    onChange={onNameHandler}
-                />
-
+                        id="name" 
+                        required
+                        placeholder="2자리 이상"
+                        type="text" 
+                        value={ Name } 
+                        onChange={onNameHandler}
+                        suffix={
+                            <Tooltip title="✔ 닉네임 중복을 확인하세요.">
+                                <button type="button" id="ConfirmName" onClick={onConfirmNameHandler}>
+                                    <CheckCircleFilled className={ConfirmName? "confirmed" : "confirm-text"} />
+                                </button>
+                            </Tooltip>
+                        }
+                    />
+                {ConfirmName ?
+                    <span className='confirmed confirm-name'>{confirmNameCmt}</span>
+                    :
+                    <span className='confirm-text confirm-name'>{confirmNameCmt}</span>
+                }
+                
                 <label>비밀번호</label>
                 <Input 
                     id="password"
@@ -100,7 +145,7 @@ function RegisterPage( props ) {
                 />
 
                 {Confirm ?
-                    (<span className='confirm-text'></span>) : (<span className='confirm-text'>비밀번호가 일치하지 않습니다!</span>)
+                    (<span></span>) : (<span className='confirm-text'>비밀번호가 일치하지 않습니다!</span>)
                 }
 
                 <br />

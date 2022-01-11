@@ -2,7 +2,8 @@ import {
     LOGIN_USER,
     REGISTER_USER,
     AUTH_USER,
-    LOGOUT_USER
+    LOGOUT_USER,
+    CONFIRM_NAME
 } from '../_actions/types';
 
 export default function user(state = {}, action) { // previous state, action
@@ -15,6 +16,8 @@ export default function user(state = {}, action) { // previous state, action
             return { ...state, userData: action.payload };
         case LOGOUT_USER:
             return {...state };
+        case CONFIRM_NAME:
+            return { ...state };
         default:
             return state;
     }

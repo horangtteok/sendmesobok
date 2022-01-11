@@ -3,7 +3,8 @@ import {
     LOGIN_USER,
     REGISTER_USER,
     AUTH_USER,
-    LOGOUT_USER
+    LOGOUT_USER,
+    CONFIRM_NAME,
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -28,6 +29,16 @@ export function registerUser(dataTosubmit) {
         type: REGISTER_USER,
         payload: request
     }
+}
+
+export function confirmName(dataTosubmit) {
+    const request = Axios.post(`${USER_SERVER}/confirmname`, dataTosubmit)
+    .then(response => response.data);
+
+    return {
+        type: CONFIRM_NAME,
+        payload: request
+    } 
 }
 
 export function auth(userToken) {

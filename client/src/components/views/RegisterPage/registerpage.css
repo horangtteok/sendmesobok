@@ -9,21 +9,35 @@
 #register-form label {
     font-weight: 600;
 }
-#register-form #name,
+#register-form #ConfirmName {
+    border: none;
+    background: none;
+
+    margin: 0;
+    padding: 0;
+    font-size: 3px;
+    font-family: 'Nanum Gothic';
+    cursor: pointer;
+}
+#register-form .confirm-name,
 #register-form #password {
     margin-bottom: 16px;
 }
+.ant-input-affix-wrapper:hover,
+.ant-input-affix-wrapper-focused,
 #confirmPassword:hover,
 #confirmPassword:focus {
     border-color: #b7aad3 !important;
-}
-#name:focus,
-#confirmPassword:focus {
-    box-shadow: 0 0 0 2px rgb(161 131 226 / 20%);
+    box-shadow: 0 0 0 2px #a183e233 !important;
     border-right-width: 1px !important;
     outline: 0;
 }
 
+#register-form .confirmed {
+    color: #23c587;
+    font-size: 11px;
+    font-family: 'Malgun Gothic';
+}
 #register-form .confirm-text {
     color: #FF5F6D;
     font-size: 11px;

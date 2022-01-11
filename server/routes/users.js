@@ -25,17 +25,24 @@ router.post('/auth', auth, (req, res) => {
     }); // 어떤 페이지에서든 user 정보를 이용할 수 있어 편해진다!
 });
 
+router.post('/confirmname', (req, res) => {
+    User.findOne({ name: req.body.name }, (err, user) => {
+        if(err) {
+            return res.json({ success: false, err })
+        }
+
+        if(user) {
+            return res.json({ success: false });
+        }
+
+        return res.status(200).json({ success: true });
+    })
+});
+
 router.post('/register', (req, res) => {
     // 회원 가입에 필요한 정보들을 client에서 가져오면
     // 그것들을 database에 넣어준다.
     User.findOne({ name: req.body.name }, (err, user) => {
-        if(user) {
-            return res.json({
-                success: false,
-                message: "이미 사용 중인 닉네임입니다."
-            })
-        }
-
         const new_user = new User(req.body);
         new_user.save((err, userInfo) => {
             if(err) return res.json({ success: false, err});

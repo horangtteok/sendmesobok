@@ -8,12 +8,13 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         minlength: 2,
-        maxlength: 50
+        maxlength: 50,
+        unique: 1
     },
     password: {
         type: String,
         required: true,
-        minlength: 4
+        minlength: 8,
     },
     role: { // user와 manager를 구분하기 위함
         type: Number,

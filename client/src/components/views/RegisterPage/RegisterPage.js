@@ -69,10 +69,14 @@ function RegisterPage( props ) {
         event.preventDefault();
         
         if(!ConfirmName){
-            alert("닉네임 중복을 확인해주세요.");
+            notification['error']({
+                message: '닉네임 중복을 확인해주세요.'
+            });
         }
         else if(!Confirm){
-            alert("비밀번호를 확인해주세요.");
+            notification['error']({
+                message: '비밀번호 확인이 일치하지 않습니다.'
+            });
         } else {
             let body = {
                 name: Name,
@@ -84,13 +88,11 @@ function RegisterPage( props ) {
                 if(response.payload.success) {
                     navigate('/login');
                 } else {
-                    if(response.payload.message){
-                        notification['error']({
-                            message: '회원가입 실패!',
-                            description:
-                              '잠시 후 다시 시도해주세요.',
-                          });
-                    }
+                    notification['error']({
+                        message: '회원가입 실패!',
+                        description:
+                          '다시 시도해주세요.',
+                    });
                 }
             });
         }
@@ -104,20 +106,21 @@ function RegisterPage( props ) {
             >   
                 <label>닉네임</label>
                 <Input
-                        id="name" 
-                        required
-                        placeholder="2자리 이상"
-                        type="text" 
-                        value={ Name } 
-                        onChange={onNameHandler}
-                        suffix={
-                            <Tooltip title="✔ 닉네임 중복을 확인하세요.">
-                                <button type="button" id="ConfirmName" onClick={onConfirmNameHandler}>
-                                    <CheckCircleFilled className={ConfirmName? "confirmed" : "confirm-text"} />
-                                </button>
-                            </Tooltip>
+                    id="name" 
+                    required
+                    placeholder="2자리 이상"
+                    type="text" 
+                    value={ Name } 
+                    minLength={2}
+                    onChange={onNameHandler}
+                    suffix={
+                        <Tooltip title="✔ 닉네임 중복을 확인하세요">
+                            <button type="button" id="ConfirmName" onClick={onConfirmNameHandler}>
+                                <CheckCircleFilled className={ConfirmName? "confirmed" : "confirm-text"} />
+                            </button>
+                        </Tooltip>
                         }
-                    />
+                />
                 {ConfirmName ?
                     <span className='confirmed confirm-name'>{confirmNameCmt}</span>
                     :
@@ -128,9 +131,10 @@ function RegisterPage( props ) {
                 <Input 
                     id="password"
                     required
-                    placeholder="4자리 이상"
+                    placeholder="8자리 이상"
                     type="password" 
                     value={ Password }
+                    minLength={8}
                     onChange={onPasswordHandler}
                 />
 

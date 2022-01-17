@@ -96,6 +96,7 @@ ul {
     background-color: #a790d8 !important;
     border-color: #a790d8;
     border-radius: 6px;
+    z-index: 2;
 }
 .message_form form button:hover,
 .message_form form button:focus,

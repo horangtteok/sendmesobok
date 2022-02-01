@@ -18,7 +18,7 @@ router.post('/getposts', (req, res) => {
                 const post = new Post({
                     userid: posts[i].userid,
                     name: posts[i].name,
-                    message: "메시지는 설날에 확인할 수 있어요!",
+                    message: posts[i].message,
                     deco: posts[i].deco,
                 })
                 securedPost.push(post)

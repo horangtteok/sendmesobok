@@ -2,6 +2,16 @@
 
 "Bok" means luck in Korean. In the new year, Koreans wish a happy new year by sharing words of blessing with people around them.
 
+You can check our service story at [notion](https://rainbow-libra-648.notion.site/2a0285cb699f4f97bc2d8ad1f1af52cd).
+
+![image](https://user-images.githubusercontent.com/43427380/157173283-16166091-79c5-4f7e-9b32-aaaa9d62c3f5.png)
+![image](https://user-images.githubusercontent.com/43427380/157173261-67fbf881-31f7-4f19-a388-a0be4f4103ed.png)
+![image](https://user-images.githubusercontent.com/43427380/157173345-f2f789c6-d080-42be-834b-8e375537d966.png)
+![image](https://user-images.githubusercontent.com/43427380/157173468-acd661a8-5828-458d-bd3b-ddc1805ab50c.png)
+![image](https://user-images.githubusercontent.com/43427380/157173392-e3465152-32a4-47af-b8c5-5435ed499373.png)
+![image](https://user-images.githubusercontent.com/43427380/157173421-ef6a2906-4a5c-406f-82d1-92326d53835e.png)
+
+
 ## Stack
 
 FrontEnd
